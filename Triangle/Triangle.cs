@@ -87,7 +87,7 @@ namespace Triangle
             if (firstPointInput.isZeroValueDistance(secondPointInput) == true 
                 || thirdPointInput.isZeroValueDistance(secondPointInput) == true
                 || thirdPointInput.isZeroValueDistance(firstPointInput) == true)
-                throw new ArgumentException($"Have a side value is 0, must more 0");
+                throw new ArgumentException($"There are points overlap! Please check ");
         }
     }
 }
