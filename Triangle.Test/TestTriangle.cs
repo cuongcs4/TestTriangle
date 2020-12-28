@@ -26,7 +26,7 @@ namespace Triangle.Test
         // Test khoảng cách giữa 2 điểm 
         [TestCase(0, 0, 1, 0, 1)]
         [TestCase(0, 0, 1, 1, 1.414213562373095)]
-        [TestCase(0, 6, 3, 2, 5.0000000001)]
+        [TestCase(0, 6, 3, 2, 5)]
         [TestCase(0, 99999, 0, 0, 99999)]
         public void TestCalculateDistance(int firstPointCoordinateX, int firstPointCoordinateY,
             int secondPointCoordinateX, int secondPointCoordinateY, double distance)
@@ -79,7 +79,7 @@ namespace Triangle.Test
 
         // Test tính chu vi
         [TestCase(0, 0, 3, 0, 0, 4, 12)]
-        [TestCase(0, 0, 2, 2, 2, 2, 5)]
+        [TestCase(0, 0, 2, 2, 2, 2, 0)]
         public void TestCalculatePerimeter(int firstPointCoordinateX, int firstPointCoordinateY,
             int secondPointCoordinateX, int secondPointCoordinateY, int thirdPointCoordinateX, int thirdPointCoordinateY, int expectedResult)
         {
