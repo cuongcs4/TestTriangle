@@ -28,9 +28,14 @@ namespace Triangle
             secondPoint = secondPointInput;
             thirdPoint = thirdPointInput;
         }
+
         public bool IsTriangle(Point firstPointInput, Point secondPointInput, Point thirdPointInput)
         {
-            return firstPointInput.calculateDistance(secondPointInput) < thirdPointInput.calculateDistance(secondPointInput) + thirdPointInput.calculateDistance(firstPointInput);
+            if (firstPointInput.calculateDistance(secondPointInput) < thirdPointInput.calculateDistance(secondPointInput) + thirdPointInput.calculateDistance(firstPointInput)
+                && thirdPointInput.calculateDistance(firstPointInput) < thirdPointInput.calculateDistance(secondPointInput) + firstPointInput.calculateDistance(secondPointInput)
+                && thirdPointInput.calculateDistance(secondPointInput) < thirdPointInput.calculateDistance(firstPointInput) + firstPointInput.calculateDistance(secondPointInput))
+                return true;
+            return false;
         }
         public bool IsEquilateralTriangle()
         {
@@ -79,9 +84,9 @@ namespace Triangle
         }
         public void TrowExceptionIfSideIsZero(Point firstPointInput, Point secondPointInput, Point thirdPointInput)
         {
-            if (firstPointInput.isZeroValueDistance(secondPointInput) == false 
-                || thirdPointInput.isZeroValueDistance(secondPointInput) == false
-                || thirdPointInput.isZeroValueDistance(firstPointInput) == false)
+            if (firstPointInput.isZeroValueDistance(secondPointInput) == true 
+                || thirdPointInput.isZeroValueDistance(secondPointInput) == true
+                || thirdPointInput.isZeroValueDistance(firstPointInput) == true)
                 throw new ArgumentException($"Have a side value is 0, must more 0");
         }
     }
